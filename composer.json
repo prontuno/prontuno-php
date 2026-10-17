@@ -1,0 +1,64 @@
+{
+    "name": "prontuno/prontuno-php",
+    "description": "Official PHP SDK for the Prontuno email API",
+    "keywords": [
+        "email",
+        "prontuno",
+        "sdk",
+        "transactional-email"
+    ],
+    "homepage": "https://github.com/prontuno/prontuno-php",
+    "support": {
+        "issues": "https://github.com/prontuno/prontuno-php/issues",
+        "source": "https://github.com/prontuno/prontuno-php",
+        "email": "support@prontuno.com"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Prontuno Team",
+            "email": "support@prontuno.com"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.8"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.29",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^11.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Prontuno\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Prontuno\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "analyse": "phpstan analyse",
+        "lint": "pint --parallel",
+        "lint:check": "pint --parallel --test",
+        "test:unit": "phpunit",
+        "test": [
+            "@analyse",
+            "@lint:check",
+            "@test:unit"
+        ],
+        "test:coverage": [
+            "@php -r \"@unlink('build/clover.xml');\"",
+            "phpunit --coverage-text --coverage-clover=build/clover.xml",
+            "@php tools/check-coverage.php build/clover.xml 100"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
