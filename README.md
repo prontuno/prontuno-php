@@ -1,6 +1,6 @@
 # Prontuno PHP SDK
 
-Framework-agnostic PHP client for the [Prontuno API](https://api.prontuno.net/v1). It supports email delivery, sending domains, suppressions, webhook endpoints, API keys, SMTP credentials, cursor pagination, and signed webhook events.
+Framework-agnostic PHP client for the [Prontuno API](https://prontuno.com/api-reference/general/introduction/). It supports email delivery, sending domains, suppressions, webhook endpoints, API keys, SMTP credentials, cursor pagination, and signed webhook events.
 
 > Using Laravel? Install [`prontuno/prontuno-laravel`](https://github.com/prontuno/prontuno-laravel) for a facade, config file, mail transport, and webhook middleware.
 
