@@ -12,11 +12,12 @@ use Prontuno\Resources\Domains;
 use Prontuno\Resources\Emails;
 use Prontuno\Resources\SmtpCredentials;
 use Prontuno\Resources\Suppressions;
+use Prontuno\Resources\Usage;
 use Prontuno\Resources\Webhooks;
 
 final class Prontuno
 {
-    public const string VERSION = '0.1.0';
+    public const string VERSION = '0.2.0';
 
     public readonly Emails $emails;
 
@@ -29,6 +30,8 @@ final class Prontuno
     public readonly ApiKeys $apiKeys;
 
     public readonly SmtpCredentials $smtpCredentials;
+
+    public readonly Usage $usage;
 
     private readonly HttpClient $client;
 
@@ -87,6 +90,7 @@ final class Prontuno
         $this->webhooks = new Webhooks($this->client);
         $this->apiKeys = new ApiKeys($this->client);
         $this->smtpCredentials = new SmtpCredentials($this->client);
+        $this->usage = new Usage($this->client);
     }
 
     /**
