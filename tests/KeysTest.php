@@ -55,12 +55,14 @@ final class KeysTest extends TestCase
         $client->emails->sendBatch([self::EMAIL]);
         $client->emails->list();
         $client->domains->list();
+        $client->usage->retrieve();
 
         $this->assertSame([
             'POST /v1/emails Bearer send',
             'POST /v1/emails/batch Bearer send',
             'GET /v1/emails Bearer manage',
             'GET /v1/domains Bearer manage',
+            'GET /v1/usage Bearer manage',
         ], $this->keysUsed());
     }
 

@@ -145,4 +145,22 @@ final class CredentialsTest extends TestCase
             }
         }
     }
+
+    public function test_it_retrieves_usage(): void
+    {
+        $usage = [
+            'subscription' => null,
+            'credits' => ['balance' => 25000, 'expires_at' => null],
+            'limits' => [
+                'domains' => ['used' => 2, 'limit' => 2],
+                'shared_teams' => ['used' => 0, 'limit' => 5],
+                'api_keys' => ['used' => 3, 'limit' => 10],
+                'smtp_credentials' => ['used' => 0, 'limit' => null],
+            ],
+        ];
+        $client = $this->client([self::json($usage)]);
+
+        $this->assertSame($usage, $client->usage->retrieve());
+        $this->assertSame(['GET https://api.prontuno.test/v1/usage'], $this->requestLines());
+    }
 }
