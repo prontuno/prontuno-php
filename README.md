@@ -63,7 +63,7 @@ $prontuno = new Prontuno(sendingKey: $sendingKey, managementKey: $managementKey,
     'timeout' => 30,          // seconds
     'connect_timeout' => 10,  // seconds
     'max_retries' => 2,
-    'app_info' => 'my-app/1.2.0',   // sent as "prontuno-php/0.1.0 my-app/1.2.0"
+    'app_info' => 'my-app/1.2.0',   // sent as "prontuno-php/0.2.0 my-app/1.2.0"
     'http_client' => new GuzzleHttp\Client([...]), // optional custom Guzzle client
 ]);
 ```

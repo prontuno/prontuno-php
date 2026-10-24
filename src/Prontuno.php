@@ -17,7 +17,7 @@ use Prontuno\Resources\Webhooks;
 
 final class Prontuno
 {
-    public const string VERSION = '0.1.0';
+    public const string VERSION = '0.2.0';
 
     public readonly Emails $emails;
 
