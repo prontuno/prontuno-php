@@ -266,7 +266,7 @@ use Prontuno\Webhooks\Exceptions\WebhookVerificationException;
 use Prontuno\Webhooks\WebhookEvent;
 use Prontuno\Webhooks\WebhookVerifier;
 
-$verifier = new WebhookVerifier((string) getenv('PRONTUNO_WEBHOOK_SECRET'));
+$verifier = new WebhookVerifier((string) getenv('PRONTUNO_WEBHOOK_SIGNING_SECRET'));
 
 try {
     $event = $verifier->constructEvent(
